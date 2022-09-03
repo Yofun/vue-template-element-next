@@ -5,7 +5,7 @@ import { createInitial } from '@/config';
 
 // css
 import '@/styles/reset.scss';
-createInitial();
 
 const app = createApp(App);
+app.use(createInitial());
 app.mount('#app');

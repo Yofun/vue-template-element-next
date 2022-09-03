@@ -38,7 +38,7 @@
   },
   "lint-staged": {
     "*.{js,ts,tsx,jsx,vue,cjs}": [
-      "eslint --fix",
+      "eslint --fix --max-warnings 0",
       "prettier --write"
     ],
     "{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
