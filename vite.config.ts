@@ -1,20 +1,16 @@
-import { defineConfig } from "vite";
-import path from "path";
+import { defineConfig } from 'vite';
+import path from 'path';
 
-import vue from "@vitejs/plugin-vue";
-import eslintPlugin from "vite-plugin-eslint";
+import vue from '@vitejs/plugin-vue';
+import eslint from 'vite-plugin-eslint';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
-    },
+      '@': path.resolve(__dirname, 'src'),
+      '@public': path.resolve(__dirname, 'public')
+    }
   },
-  plugins: [
-    vue(), // 增加下面的配置项,这样在运行时就能检查eslint规范
-    eslintPlugin({
-      include: ["src/**/*.ts", "src/**/*.vue", "src/*.ts", "src/*.vue"],
-    }),
-  ],
+  plugins: [vue(), eslint()]
 });
