@@ -31,3 +31,7 @@ Unit Test: https://cn.vitest.dev/
 ### husky + lint-staged
 
 [Vite+Vue3+TypeScript+Husky+Lint-staged 搭建企业级轻量框架实践](https://juejin.cn/post/7062906666487906317)
+
+### commitlint
+
+[Vite+Vue3+TypeScript+Husky+Commitlint 搭建企业级轻量框架实践](https://juejin.cn/post/7063700156130000904)
