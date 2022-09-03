@@ -1,16 +1,33 @@
-# Vue 3 + TypeScript + Vite
+# Vue3.0 + Typescript + Vite + Element Plus
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Reference
 
-## Recommended IDE Setup
+Vite: https://cn.vitejs.dev/
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+Vue3.0: https://cn.vuejs.org/
 
-## Type Support For `.vue` Imports in TS
+Element Plus: https://element-plus.org/zh-CN/
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+Unit Test: https://cn.vitest.dev/
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
+## Initialization
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+### Started
+
+> yarn create vite vue-template-element-next --template vue-ts
+
+> cd vue-template-element-next
+
+> yarn
+
+> yarn dev
+
+**Notes: 该项目只能使用`yarn`来安装依赖, 因为在 package.json 中配置了：`"preinstall": "npx only-allow yarn"`**
+
+### eslint + prettier
+
+[Vite + Vue3 + EsLint + Prettier 超简单配置步骤](https://segmentfault.com/a/1190000041954694)
+
+### husky + lint-staged
+
+[Vite+Vue3+TypeScript+Husky+Lint-staged 搭建企业级轻量框架实践](https://juejin.cn/post/7062906666487906317)
