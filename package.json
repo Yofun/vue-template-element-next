@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "element-plus": "^2.2.16",
+    "pinia": "^2.0.21",
     "vue": "^3.2.37"
   },
   "devDependencies": {
@@ -47,7 +48,7 @@
     "vue-tsc": "^0.39.5"
   },
   "lint-staged": {
-    "*.{js,ts,tsx,jsx,vue,cjs}": [
+    "src/**/*.{js,ts,tsx,jsx,vue,cjs}": [
       "eslint --fix --max-warnings 0",
       "prettier --write"
     ],
