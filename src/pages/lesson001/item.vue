@@ -1,25 +1,25 @@
 <script setup lang="ts">
-import { ref, watch, nextTick, defineProps } from 'vue';
+import { ref, watch, toRefs, nextTick } from 'vue';
 
-// eslint-disable-next-line vue/no-setup-props-destructure
-const { content } = defineProps({
+const props = defineProps({
   content: {
     type: String,
     required: true
   }
 });
+const { content } = toRefs(props);
 
 const isNewline = ref(false);
-
-const realRef = ref();
-
-const shodowRef = ref();
+const realRef = ref<HTMLElement>();
+const shodowRef = ref<HTMLElement>();
 
 watch(
   () => content,
   () => {
     nextTick(() => {
-      isNewline.value = realRef.value?.getBoundingClientRect().height < shodowRef.value?.getBoundingClientRect().height;
+      if (realRef.value && shodowRef.value) {
+        isNewline.value = realRef.value.getBoundingClientRect().height < shodowRef.value.getBoundingClientRect().height;
+      }
     });
   },
   { immediate: true }
@@ -32,8 +32,12 @@ watch(
       是否换行: <span :style="{ color: 'red' }">{{ isNewline ? '是' : '否' }}</span>
     </p>
     <div class="content">
-      <p class="newline" ref="realRef">{{ content }}</p>
-      <p class="shadow" ref="shodowRef">{{ content }}</p>
+      <p ref="realRef" class="newline">
+        {{ content }}
+      </p>
+      <p ref="shodowRef" class="shadow">
+        {{ content }}
+      </p>
     </div>
   </div>
 </template>
