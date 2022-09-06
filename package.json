@@ -18,7 +18,8 @@
   "dependencies": {
     "element-plus": "^2.2.16",
     "pinia": "^2.0.21",
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "vue-i18n": "9"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",

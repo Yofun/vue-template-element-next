@@ -1,14 +1,27 @@
-<template>
-  <h1>Hello World!</h1>
-  <p>{{ a }}</p>
-  <p>{{ user.name }}</p>
-  <p>{{ user.age }}</p>
-  <p>{{ user.sex }}</p>
-  <el-button @click="() => setUser({ name: '李四', age: 20, sex: '女' })">哈哈哈</el-button>
-</template>
-
 <script setup lang="ts">
-import { useUserStore } from '@/store';
-const { user, setUser } = useUserStore();
-const a = 111;
+import { ref } from 'vue';
+import { useTransation } from '@/config/i18n';
+import { useElementLocale } from '@/config/element-ui';
+
+const { t, change, locale } = useTransation();
+const localeElement = useElementLocale();
+
+const date = ref('');
+
+const changeLng = () => {
+  if (locale.value === 'en-US') {
+    change('zh-CN');
+  } else {
+    change('en-US');
+  }
+};
 </script>
+
+<template>
+  <el-config-provider :locale="localeElement">
+    <h1>{{ t('app.hello') }}</h1>
+    <el-button @click="changeLng">change language</el-button>
+    <br />
+    <el-date-picker v-model="date" type="date" placeholder="Pick a day" />
+  </el-config-provider>
+</template>
