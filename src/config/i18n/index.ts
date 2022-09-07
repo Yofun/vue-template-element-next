@@ -1,10 +1,15 @@
 import { computed } from 'vue';
 import { createI18n, useI18n } from 'vue-i18n';
 
-import { zh } from './zh-CN';
-import { en } from './en-US';
+import zh from '@/locales/zh-CN/index.json';
+import en from '@/locales/en-US/index.json';
 
-const locale = 'zh-CN';
+// types
+export type Keys = keyof typeof zh;
+export type Language = keyof typeof resource;
+
+// vars
+const locale: Language = 'zh-CN';
 export const resource = {
   'zh-CN': zh,
   'en-US': en
