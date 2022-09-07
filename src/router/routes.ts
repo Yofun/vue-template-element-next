@@ -1,9 +1,7 @@
 import { RouteRecordRaw } from 'vue-router';
 
-import Index from '@/pages/index.vue';
-import Lesson001 from '@/pages/lesson001/index.vue';
-
 export type RouterItem = RouteRecordRaw & {
+  children?: RouterItem[];
   meta: {
     title: string;
   };
@@ -12,16 +10,30 @@ export type RouterItem = RouteRecordRaw & {
 const routes: RouterItem[] = [
   {
     path: '/',
-    component: Index,
+    component: () => import('@/pages/index.vue'),
     meta: {
       title: '首页'
     }
   },
   {
     path: '/lesson001',
-    component: Lesson001,
+    component: () => import('@/pages/lesson001/index.vue'),
     meta: {
       title: '课时一：检测自动换行'
+    }
+  },
+  {
+    path: '/lesson002',
+    component: () => import('@/pages/lesson002/index.vue'),
+    meta: {
+      title: '课时二：chrome桌面通知'
+    }
+  },
+  {
+    path: '/lesson003',
+    component: () => import('@/pages/lesson003/index.vue'),
+    meta: {
+      title: '课时三：国际化'
     }
   }
 ];

@@ -27,6 +27,7 @@
   "rules": {
     "semi": 0,
     "no-console": 1,
+    "no-empty": 0,
     // vue
     "vue/multi-word-component-names": 0
   }

@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { useRoute } from 'vue-router';
-
+import { useRouterTitle } from '@/router';
 import Item from './item.vue';
 
-const title = computed(() => useRoute().meta.title);
+const title = useRouterTitle();
 </script>
 
 <template>
