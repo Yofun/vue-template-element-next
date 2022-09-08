@@ -1,5 +1,6 @@
 *.d.ts
 node_modules
 build
+dist
 /*.ts
 vite.config.ts
